@@ -9,9 +9,7 @@ amqp.connect('amqp://localhost', async (error0, connection) => {
     const msg = 'Hello World!';
     const exchange = 'formiguinha.exchange'
 
-    for (let x = 0; x < 500; x++) {
-      channel.publish(exchange, '', Buffer.from(msg));
-    }
+    channel.publish(exchange, '', Buffer.from(msg));
 
     console.log(" [x] Sent %s", msg);
   });
